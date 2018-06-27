@@ -123,7 +123,7 @@ export class OidcSecurityCheckSession {
     private messageHandler(e: any) {
         if (
             this.sessionIframe &&
-            e.origin === this.authConfiguration.stsServer &&
+            e.origin !== this.authConfiguration.stsServer &&
             e.source === this.sessionIframe.contentWindow
         ) {
             if (e.data === 'error') {
